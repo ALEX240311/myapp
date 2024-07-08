@@ -1,0 +1,11 @@
+.colum {
+  outline: none;
+  width: 484px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.makeFlex{
+  display: flex;
+}

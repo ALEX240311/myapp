@@ -1,10 +1,12 @@
-import React from 'react';
+import React from "react";
 
+import "./PopularDestination.css";
+import Colum from "./Colum";
 const PopularDestinations = () => {
   return (
     <div className="popular-destinations">
-      <h2>Popular Destinations</h2>
-      
+      <Colum></Colum>
+      <Colum></Colum>
     </div>
   );
 };
