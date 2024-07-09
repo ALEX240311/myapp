@@ -1,24 +1,11 @@
+@import './HeaderStyle.css';
+@import './SearchBar.css';
+
 body {
   font-family: Arial, sans-serif;
   margin:0;
   padding: 0;
   box-sizing: border-box;
-}
-
-header{
-  background-color:#4c515a;
-  color: #fff;
-  padding: 20px 30px;
-  display:flex;
-  justify-content:space-between;
-  align-items: center;
-  
-}
-header{
-
-}
-header .logo img{
-  height: 80;
 }
 
 nav ul{
@@ -28,7 +15,7 @@ nav ul{
 
 }
 nav ul li a {
-  color: #fff;
+  color: #333333;
   text-decoration: none;
 }
 .search-bar {
@@ -37,6 +24,7 @@ nav ul li a {
   gap: 10px;
   justify-content: center;
   align-items: center;
+  background-image :'./Assets/gf.png';
 }
 .search-bar input,
 .search-bar select {
