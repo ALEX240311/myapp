@@ -1,0 +1,64 @@
+/* src/components/SearchForm.css */
+
+.search-form {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .trip-type {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .trip-type label {
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .fields input[type="text"], 
+  .fields input[type="date"], 
+  .fields input[type="number"], 
+  .fields select, 
+  .fields button {
+    flex: 1 1 calc(33.333% - 20px);
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .fields button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    flex: 1 1 100%;
+    transition: background-color 0.3s;
+  }
+  
+  .fields button:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 768px) {
+    .fields input[type="text"], 
+    .fields input[type="date"], 
+    .fields input[type="number"], 
+    .fields select, 
+    .fields button {
+      flex: 1 1 100%;
+    }
+  }

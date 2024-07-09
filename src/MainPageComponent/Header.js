@@ -1,12 +1,12 @@
 import React from "react";
-
-
+import logo from './Assets/logo.png'
+import './HeaderStyle.css'; 
 
 const Header = () => {
   return (
     <header>
       <div className="logo">
-        <img src="" alt="Airline Logo"></img>
+        <img src={logo} alt="Airline Logo"></img>
       </div>
       <nav>
         <ul>
