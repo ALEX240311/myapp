@@ -40,7 +40,7 @@ const SearchBar = () => {
             <option value="business">Business</option>
             <option value="first-class">First Class</option>
           </select>
-          <button onClick={handleSearch}>Search Flights</button>
+          <button onClick={handleSearch}>Book FLight</button>
         </div>
       </div>
     </div>
