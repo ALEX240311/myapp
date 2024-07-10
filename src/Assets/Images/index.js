@@ -1,6 +1,6 @@
-const images ={
-    logo : require('~/Assets/Images/logo.png').default,
-    searchBG : require('~/Assets/Images/gf.png').default,
-}
+const images = {
+    logo: require("./logo.png"),
+    searchBG: require("./gf.png"),
+};
 
-export default images
+export default images;
