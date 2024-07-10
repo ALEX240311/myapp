@@ -22,14 +22,12 @@ class MainPage extends Component {
 
         return (
             <div className="MainPage">
-                <Header />
                 <div style={searchBarStyle}>
                     <SearchBar />
                 </div>
                 <Promotions />
                 <PopularDestinations />
                 <Testimonials />
-                <Footer />
             </div>
         );
     }

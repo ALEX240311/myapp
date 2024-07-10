@@ -1,8 +1,8 @@
-import "./App.css";
-import MainPage from "./Component/MainPage/MainPage";
+import useRouteElements from "./hooks/useRouteElements";
 
 function App() {
-  return <MainPage></MainPage>;
+    const elements = useRouteElements();
+    return elements;
 }
 
 export default App;
