@@ -1,86 +1,65 @@
-import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import "./SearchBar.css";
+import Input from "../Input";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
-    const [tripType, setTripType] = useState("one-way");
-    const [departure, setDeparture] = useState("");
-    const [destination, setDestination] = useState("");
-    const [departureDate, setDepartureDate] = useState("");
-    const [returnDate, setReturnDate] = useState("");
-    const [passengers, setPassengers] = useState(1);
-    const [classType, setClassType] = useState("economy");
-
-    const handleSearch = () => {
-        // Handle search logic here
-    };
-
+    const { register, handleSubmit } = useForm();
+    const navigate = useNavigate();
+    const onSubmit = handleSubmit((data) => {
+        navigate("/detailFlight", { state: data });
+    });
     return (
         <div className="search-bar-container">
             <div className="search-bar">
                 <div className="trip-type">
                     <label>
-                        <input
-                            type="radio"
-                            value="round-trip"
-                            checked={tripType === "round-trip"}
-                            onChange={() => setTripType("round-trip")}
-                        />
+                        <input type="radio" value="round-trip" />
                         Round-trip
                     </label>
                     <label>
-                        <input
-                            type="radio"
-                            value="one-way"
-                            checked={tripType === "one-way"}
-                            onChange={() => setTripType("one-way")}
-                        />
+                        <input type="radio" value="one-way" />
                         One-way
                     </label>
                 </div>
-                <div className="fields">
-                    <input
+                <form className="fields" onSubmit={onSubmit}>
+                    <Input
                         type="text"
                         placeholder="From"
-                        value={departure}
-                        onChange={(e) => setDeparture(e.target.value)}
+                        register={register}
+                        name="from"
                     />
-                    <input
+                    <Input
                         type="text"
                         placeholder="To"
-                        value={destination}
-                        onChange={(e) => setDestination(e.target.value)}
+                        register={register}
+                        name="to"
                     />
-                    <input
+                    <Input
+                        name="departureDate"
                         type="date"
                         placeholder="Departure Date"
-                        value={departureDate}
-                        onChange={(e) => setDepartureDate(e.target.value)}
+                        register={register}
                     />
-                    {tripType === "round-trip" && (
-                        <input
-                            type="date"
-                            placeholder="Return Date"
-                            value={returnDate}
-                            onChange={(e) => setReturnDate(e.target.value)}
-                        />
-                    )}
+                    <Input
+                        name="returnDate"
+                        type="date"
+                        placeholder="Return Date"
+                        register={register}
+                    />
                     <input
+                        min={1}
+                        name="passengers"
                         type="number"
-                        min="1"
-                        placeholder="Passengers"
-                        value={passengers}
-                        onChange={(e) => setPassengers(e.target.value)}
+                        {...register("passengers")}
                     />
-                    <select
-                        value={classType}
-                        onChange={(e) => setClassType(e.target.value)}
-                    >
+                    <select {...register("service")}>
                         <option value="economy">Economy</option>
                         <option value="business">Business</option>
                         <option value="first-class">First Class</option>
                     </select>
-                    <button onClick={handleSearch}>Book FLight</button>
-                </div>
+                    <button>Book FLight</button>
+                </form>
             </div>
         </div>
     );
